@@ -6,10 +6,10 @@ import Chart from "../components/charts/LineChart.tsx"
 export default function Dashboard(){
     return (
         <>
-            <Header />
+            {/* <Header />
             <div className="container-fluid">
                 <div className="row">
-                    <SideBar />
+                    <SideBar /> */}
                     <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                         <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                             <h1 className="h2">Dashboard</h1>
@@ -32,8 +32,8 @@ export default function Dashboard(){
                         data={[1000,2656,34545,4353,5535]}
                         />
                     </main>
-                </div>
-            </div>
+                {/* </div>
+            </div> */}
 
         </>
     )

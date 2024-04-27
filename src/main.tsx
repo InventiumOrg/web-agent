@@ -13,9 +13,19 @@ import Dashboard from "./routes/Dashboard.tsx"
 import Revenue from "./routes/Revenue.tsx"
 import Import from "./routes/inventory/Import.tsx"
 import ReportForm from "./routes/report/ReportForm.tsx"
-
+import App from "./app.tsx"
 
 const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/dashboard",
+        element: <Dashboard />
+      }
+    ]
+  },
   {
     path: "/dashboard",
     element: <Dashboard />
