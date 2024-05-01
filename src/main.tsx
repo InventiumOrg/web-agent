@@ -23,52 +23,50 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard />
+      },
+      {
+        path: "/inventory",
+        element: <Inventory />,
+        children: [
+          // {
+          //   path: "/inventory/imports/new",
+          //   element: <Import />
+          // },
+          {
+            path: "/inventory/exports",
+            element: <Inventory />
+          },
+          {
+            path: "/inventory/summary",
+            element: <Inventory /> 
+          }
+        ]
+      },
+      {
+        path: "/inventory/imports/new",
+        element: <Import heading="New Inventory Import" 
+        />
+      },
+      {
+        path: "/pos",
+        element: <Pos />
+      },
+      {
+        path: "/revenue",
+        element: <Revenue />
+      },
+      {
+        path: "/reports",
+        element: <Report />
       }
     ]
-  },
-  {
-    path: "/dashboard",
-    element: <Dashboard />
   },
   {
     path: "/signin",
     element: <Signin />
   },
-  {
-    path: "/inventory",
-    element: <Inventory />,
-    children: [
-      // {
-      //   path: "/inventory/imports/new",
-      //   element: <Import />
-      // },
-      {
-        path: "/inventory/exports",
-        element: <Inventory />
-      },
-      {
-        path: "/inventory/summary",
-        element: <Inventory /> 
-      }
-    ]
-  },
-  {
-    path: "/inventory/imports/new",
-    element: <Import heading="New Inventory Import" 
-    />
-  },
-  {
-    path: "/pos",
-    element: <Pos />
-  },
-  {
-    path: "/revenue",
-    element: <Revenue />
-  },
-  {
-    path: "/reports",
-    element: <Report />
-  }
+  
+
 ])
 
 
