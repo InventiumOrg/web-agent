@@ -1,5 +1,5 @@
-import RecordHistory from "../components/tables/RecordHistory";
-import BarChart from "../components/charts/BarChart";
+import RecordHistory from "../../components/tables/RecordHistory";
+import BarChart from "../../components/charts/BarChart";
 
 export default function Pos(){
     return (

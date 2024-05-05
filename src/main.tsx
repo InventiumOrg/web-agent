@@ -6,14 +6,14 @@ import {
   RouterProvider,
 } from "react-router-dom"
 import Inventory from "./routes/Inventory.tsx"
-import Pos from "./routes/Pos.tsx"
+import Pos from "./routes/pointofsale/Pos.tsx"
 import Report from "./routes/Report.tsx"
-// import Nav from "./components/Nav.tsx"
 import Dashboard from "./routes/Dashboard.tsx"
-import Revenue from "./routes/Revenue.tsx"
+import Revenue from "./routes/revenue/Revenue.tsx"
 import Import from "./routes/inventory/Import.tsx"
 import ReportForm from "./routes/report/ReportForm.tsx"
 import App from "./app.tsx"
+import RecordHistory from "./components/tables/RecordHistory.tsx"
 
 const router = createBrowserRouter([
   {
@@ -25,28 +25,40 @@ const router = createBrowserRouter([
         element: <Dashboard />
       },
       {
-        path: "/inventory",
+        path: "/inventory/",
         element: <Inventory />,
         children: [
-          // {
-          //   path: "/inventory/imports/new",
-          //   element: <Import />
-          // },
           {
-            path: "/inventory/exports",
-            element: <Inventory />
+            path: "imports",
+            element: <RecordHistory 
+              title="Today's Inventory Imports"
+              headers={["ExportID", "PosID", "Product", "Created Date", "Status", "Quantity", "Unit"]}
+              data={["EXP/POS004/001", "001", "Condensed Milk", "2024/02/06",<span className="badge text-bg-info">Processing</span>, 20,"units"]}
+            /> 
           },
           {
-            path: "/inventory/summary",
-            element: <Inventory /> 
+            path: "exports",
+            element: <RecordHistory 
+              title="Today's Inventory Exports"
+              headers={["ExportID", "PosID", "Product", "Created Date", "Status", "Quantity", "Unit"]}
+              data={["EXP/POS004/001", "001", "Condensed Milk", "2024/02/06",<span className="badge text-bg-info">Processing</span>, 20,"units"]}
+            /> 
+          },
+          {
+            path: "new",
+            element: <Import />
           }
+          // {
+          //   path: "/inventory/imports/new",
+          //   element: <Import heading="New Inventory Import" 
+          //   />
+          // },
         ]
       },
-      {
-        path: "/inventory/imports/new",
-        element: <Import heading="New Inventory Import" 
-        />
-      },
+      // {
+      //   path: "/signin",
+      //   element: <Signin />
+      // },
       {
         path: "/pos",
         element: <Pos />
@@ -56,17 +68,17 @@ const router = createBrowserRouter([
         element: <Revenue />
       },
       {
-        path: "/reports",
-        element: <Report />
+        path: "/reports/",
+        element: <Report />,
+        children: [
+          {
+            path: "new",
+            element: <ReportForm />
+          }
+        ]
       }
     ]
   },
-  {
-    path: "/signin",
-    element: <Signin />
-  },
-  
-
 ])
 
 

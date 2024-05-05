@@ -1,11 +1,13 @@
+import { NavLink } from "react-router-dom";
+
 export default function Tab() {
     return (
         <ul className="nav nav-pills">
             <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Exports</a>
+                <NavLink className="nav-link"  to="exports">Exports</NavLink>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="#">Imports</a>
+                <NavLink className="nav-link" to="imports">Imports</NavLink>
             </li>
         </ul>
     )
