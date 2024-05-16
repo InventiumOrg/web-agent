@@ -6,7 +6,7 @@ on:
 
 env:
   REPOSITORY: 205098647215.dkr.ecr.ap-southeast-1.amazonaws.com/inventium/web-agent
-  IMAGE: msg-inventory
+  IMAGE: web-agent
   VERSION: 0.0.1
 
 jobs:
@@ -30,7 +30,7 @@ jobs:
 
       - name: Build
         run: |-
-          docker build --tag "$REPOSITORY:$VERSION" . --build-arg SERVICE_NAME=$IMAGE --build-arg FOLDER=.
+          docker build --tag "$REPOSITORY:$VERSION" . --build-arg SERVICE_NAME=$IMAGE
 
       - name: Publish
         run: |-
