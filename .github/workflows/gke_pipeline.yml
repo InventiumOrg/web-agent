@@ -28,7 +28,7 @@ jobs:
 
       - uses: actions/checkout@v4
       - name: Build Image
-        run: docker build --tag "$REPOSITORY:$VERSION" . --build-arg SERVICE_NAME=$IMAGE
+        run: docker build --tag "$REPOSITORY:$VERSION" . --build-arg SERVICE_NAME=$IMAGE --build-arg FOLDER_NAME=$GITHUB_WORKSPACE
 
       - name: Publish to ECR
         run: |-
