@@ -8,6 +8,7 @@ env:
   REPOSITORY: 205098647215.dkr.ecr.ap-southeast-1.amazonaws.com/inventium/web-agent
   IMAGE: web-agent
   VERSION: 0.0.1
+  LOCATION: /home/runner/work/web-agent/web-agent
 
 jobs:
   continuous-integration:
@@ -32,7 +33,7 @@ jobs:
 
       - name: Build
         run: |-
-          docker build --tag "$REPOSITORY:$VERSION" . --build-arg SERVICE_NAME=$IMAGE
+          docker build --tag "$REPOSITORY:$VERSION" . --build-arg SERVICE_NAME=$IMAGE --build-arg FOLDER=$LOCATION
 
       - name: Publish
         run: |-
