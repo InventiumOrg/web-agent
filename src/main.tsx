@@ -8,7 +8,7 @@ import {
 import Inventory from "./routes/Inventory.tsx"
 import Pos from "./routes/pointofsale/Pos.tsx"
 import Report from "./routes/Report.tsx"
-import Dashboard from "./routes/Dashboard.tsx"
+import Home from "./routes/Home.tsx"
 import Revenue from "./routes/revenue/Revenue.tsx"
 import Import from "./routes/inventory/Import.tsx"
 import ReportForm from "./routes/report/ReportForm.tsx"
@@ -21,8 +21,8 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/dashboard",
-        element: <Dashboard />
+        path: "/home",
+        element: <Home />
       },
       {
         path: "/inventory/",
