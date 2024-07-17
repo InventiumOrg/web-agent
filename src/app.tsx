@@ -1,19 +1,11 @@
-import { Outlet } from "react-router-dom";
-import SideBar from "./components/navigation/Sidebar";
-import Header from "./components/navigation/Header";
+import { Outlet } from 'react-router-dom';
 
 const App = () => {
-    return (
-        <>
-            <Header />
-            <div className="container-fluid">
-                <div className="row">
-                    <SideBar />
-                        <Outlet />
-                </div>
-            </div>
-        </>
-    )
-}
+  return (
+    <>
+      <Outlet />
+    </>
+  );
+};
 
 export default App;
